@@ -13,7 +13,7 @@ import Fof from './Apps/Fof'
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
-        <Route path='boredgames' element={<Layout />} >
+        <Route path='/' element={<Layout />} >
             <Route index element={<Homepage />} />
             <Route path='dicecoin' element={<Dicecoin />} />
             <Route path='rps' element={<Rps />} />
