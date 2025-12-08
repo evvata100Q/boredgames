@@ -1,0 +1,47 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.table {
+    gap: 4px;
+    width: 40%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.gridcell {
+    border: 2px solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.sudokubutton {
+    background-color: transparent;
+    height: 30px;
+    width: 59px;
+    transition: all 0.2s ease;
+}
+
+.sudokubutton:hover {
+    background-color: black;
+    color: white;
+}
+
+
+@media (max-width:600px) {
+    .table {
+        width: 90%;
+        height: 60%;
+    }
+}

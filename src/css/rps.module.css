@@ -1,0 +1,85 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.board {
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+
+    display: flex;
+
+    position: relative;
+
+}
+
+.playerchoice,
+.cpuchoice {
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image.animate {
+    animation: preshoot linear 0.5s 3
+}
+
+.image {
+    height: 50%;
+    width: 50%;
+}
+
+@keyframes preshoot {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.pick {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border: 1px solid black;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pick img {
+    border-radius: 50%;
+}
+
+
+.pick img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width:600px) {
+    .board {
+        height: 40%;
+    }
+
+    .pick {
+        width: 25%;
+        height: 20%;
+    }
+}

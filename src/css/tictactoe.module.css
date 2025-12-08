@@ -1,0 +1,40 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    width: 40%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.box {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 500%;
+}
+
+.tictactoebutton {
+    background-color: transparent;
+}
+
+.tictactoebutton:hover {
+    background-color: black;
+    color: white;
+}
+
+
+@media (max-width:600px) {
+    .board {
+        width: 75%;
+    }
+}

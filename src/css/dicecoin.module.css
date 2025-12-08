@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.dice {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateY(45deg) rotateX(45deg);
+    transition: linear;
+}
+
+
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    font-size: 5em;
+}
+
+
+.one {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.two {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.three {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.four {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.five {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.six {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+.line {
+    height: 100%;
+    width: 1%;
+    background-color: black;
+}
+
+.coin {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition-timing-function: ease;
+    transform-style: preserve-3d;
+    border: 1px solid black;
+
+
+}
+
+.head,
+.tail {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    border-radius: 50%;
+    background-color: rgba(240, 241, 242, 0.9);
+    backface-visibility: hidden;
+
+
+}
+
+.tail {
+    transform: rotateY(180deg);
+}
+
+.hint {
+    text-align: center;
+}
+
+@media (max-width:600px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .line {
+        height: 1%;
+        width: 90%;
+    }
+}
