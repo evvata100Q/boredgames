@@ -57,6 +57,7 @@ const Sudoku = () => {
 
     return (
         <div className={styles.main}>
+            <button className={styles.sudokubutton} onClick={() => { setboard(new Array(9).fill('').map(each => new Array(9).fill(''))) }}>reset</button>
             <button className={styles.sudokubutton} onClick={done}>check</button>
             <br />
             <h4 style={{ alignSelf: '' }}>*press q to remove</h4>

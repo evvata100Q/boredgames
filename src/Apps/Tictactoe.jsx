@@ -50,7 +50,7 @@ const Tictactoe = () => {
         <div className={styles.main}>
             {gamedone && <div>
                 <h3 style={{ textAlign: 'center' }}>{gamedone} wins</h3>
-                <button className={styles.tictactoebutton} onClick={reset}>another game</button>
+                <button className={styles.tictactoebutton} onClick={reset}>new game</button>
             </div>}
             <br /><br />
             <div className={styles.board}>

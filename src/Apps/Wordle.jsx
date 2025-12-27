@@ -6,31 +6,48 @@ const App = () => {
   const [guesses, setguesses] = useState(new Array(6).fill('     '))
   const [curguess, setcurguess] = useState('')
 
+  const [outgame, setoutgame] = useState(false)
+
   function reset() {
     setcurguess('')
     setguesses(new Array(6).fill('     '))
     setguesscount(0)
+    setoutgame(false)
   }
 
   function guessword() {
+    setguesses(prev => { prev[guesscount] = curguess; return prev })
+    setcurguess('')
+
     if (curguess === answer) {
-      alert('u win')
-      reset()
+      setoutgame(true)
     }
     else {
-      if (guesscount === 5) { alert('game over'); reset() }
+      if (guesscount === 5) {
+        setoutgame(true)
+      }
       else {
-        setguesses(prev => { prev[guesscount] = curguess; return prev })
-        setcurguess('')
         setguesscount(prev => prev + 1)
       }
     }
+
+
   }
+
+
+
 
   return (
     <div className={styles.main}>
+
+      {
+        outgame && <button onClick={reset}>reset</button>
+      }
+
+
+
       <form onSubmit={(e) => { e.preventDefault(); guessword() }}>
-        <input type="text" placeholder='guess a word' value={curguess} onChange={(e) => { setcurguess(e.target.value) }} minLength={5} maxLength={5} />
+        <input disabled={outgame} type="text" placeholder='enter a word' value={curguess} onChange={(e) => { setcurguess(e.target.value) }} minLength={5} maxLength={5} />
       </form>
 
       <br /><br />
@@ -49,5 +66,6 @@ const App = () => {
     </div>
   )
 }
+
 
 export default App

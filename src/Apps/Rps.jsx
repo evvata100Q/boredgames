@@ -53,8 +53,13 @@ const Rps = () => {
         }
     }, [ingame])
 
+    function reset() {
+        setcpus(0); setps(0); setpick(0); setcpuc(0); setpc(0)
+    }
+
     return (
         <div className={styles.main}>
+            {ps + cpus > 0 && <button onClick={reset}>reset</button>}
             <button onClick={start} disabled={ingame}>play</button>
             <p>{ps}-{cpus}</p>
             <div className={styles.board}>
